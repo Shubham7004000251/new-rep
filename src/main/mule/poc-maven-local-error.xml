@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="505bbf85-bbe6-4575-8ec9-5198735e6e6d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="poc-maven-local-errorFlow" doc:id="f0a3d8ce-615e-4b87-80fe-c8279d1042bc" >
+		<http:listener doc:name="Listener" doc:id="38b2fc53-1d37-4dd1-afc5-a53cef2cd708" config-ref="HTTP_Listener_config" path="local"/>
+		<logger level="INFO" doc:name="Logger" doc:id="4c82569a-3910-460e-82fa-e2d079d860cc" />
+	</flow>
+</mule>
